@@ -1,3 +1,6 @@
+// Orchard's Main Activity
+// October 2015
+
 package com.example.andrewmc.cart_0;
 
         import java.util.HashMap;
@@ -150,14 +153,14 @@ public class MainActivity extends Activity {
 
     public void stop(View v) {
         PD.show();
-        stop_command = start_et.getText().toString();
+        stop_command = "2";
 
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         PD.dismiss();
-                        start_et.setText("");
+                        //start_et.setText("");
                         Toast.makeText(getApplicationContext(),
                                 "Command sent successfully.",
                                 Toast.LENGTH_SHORT).show();

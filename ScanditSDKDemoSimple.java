@@ -1,4 +1,5 @@
-//
+// Orchard's Barcode Scanning Activity
+// October 2015
 
 package com.example.andrewmc.cart_0;
 
@@ -39,7 +40,8 @@ public class ScanditSDKDemoSimple extends Activity implements ScanditSDKOnScanLi
     private ScanditSDK mBarcodePicker;
     public String start_et;
     String url = "http://10.0.1.120/take_start.php";
-    String url_barcode = "http://10.0.1.120/read_barcode2.php";
+    String url_barcode = "http://10.0.1.120/read_barcode4.php";
+    //String url_barcode = "http://10.0.1.120/testphp.php";
     String start_command;
     String barcode;
     String weight;
@@ -48,7 +50,7 @@ public class ScanditSDKDemoSimple extends Activity implements ScanditSDKOnScanLi
 
     // Enter your Scandit SDK App key here.
     // Your Scandit SDK App key is available via your Scandit SDK web account.
-    public static final String sScanditSdkAppKey = "vryU1ocpVJsRvl/1jt9Fb3EhsnI7sd7VbBbF6yEsWJc";
+    public static final String sScanditSdkAppKey = "aA0xR+DWELzPyYOIgTd1m+R6zcQKCxSfL8mtVXpr1Os";
 
     Toast mToast = null;
     @Override
