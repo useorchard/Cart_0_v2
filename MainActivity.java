@@ -19,9 +19,13 @@ package com.example.andrewmc.cart_0;
 
 public class MainActivity extends Activity {
 
+    //ORCHARDU CONNECTION PATHWAY
+    String url = "http://10.0.1.24/take_command.php";
 
 
-    String url = "http://10.0.1.120/take_command.php";
+    // ORCHARD2 CONNECTION PATHWAY
+    //String url = "http://10.0.1.120/take_command.php";
+
     String start_command;
     String retrieve_command;
     String push_command;

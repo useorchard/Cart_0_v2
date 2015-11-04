@@ -4,10 +4,13 @@
 package com.example.andrewmc.cart_0;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
@@ -39,9 +42,18 @@ public class ScanditSDKDemoSimple extends Activity implements ScanditSDKOnScanLi
     // The main object for recognizing a displaying barcodes.
     private ScanditSDK mBarcodePicker;
     public String start_et;
-    String url = "http://10.0.1.120/take_start.php";
-    String url_barcode = "http://10.0.1.120/read_barcode4.php";
-    //String url_barcode = "http://10.0.1.120/testphp.php";
+
+
+    // ORCHARDU CONNECTION PATHWAYS
+    String url = "http://10.0.1.24/take_start.php";
+    String url_barcode = "http://10.0.1.24/read_barcode4.php";
+
+
+    // ORCHARD2 CONNECTION PATHWAYS
+
+    //String url = "http://10.0.1.120/take_start.php";
+    //String url_barcode = "http://10.0.1.120/read_barcode4.php";
+
     String start_command;
     String barcode;
     String weight;
@@ -101,6 +113,7 @@ public class ScanditSDKDemoSimple extends Activity implements ScanditSDKOnScanLi
         // Register listener, in order to be notified about relevant events
         // (e.g. a successfully scanned bar code).
         mBarcodePicker.addOnScanListener(this);
+
     }
 
     /**
