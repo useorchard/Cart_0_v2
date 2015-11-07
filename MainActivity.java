@@ -229,6 +229,7 @@ public class MainActivity extends Activity {
 
     public void read(View v) {
         Intent read_intent = new Intent(MainActivity.this, ReadData.class);
+        //Intent read_intent = new Intent(MainActivity.this, ReadData.class);
         startActivity(read_intent);
     }
 

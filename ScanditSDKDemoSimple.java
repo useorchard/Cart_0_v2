@@ -7,16 +7,25 @@ import android.app.Activity;
 
 //NEW
 import android.annotation.TargetApi;
+import android.app.FragmentManager;
 import android.os.Build;
 import android.preference.PreferenceManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.internal.view.menu.MenuView;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.RelativeLayout;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.mirasense.scanditsdk.ScanditSDKScanSettings;
 //import com.mirasense.scanditsdk.interfaces.ScanditSDKOnScanListener;
 //import com.mirasense.scanditsdk.interfaces.ScanditSDKScanSession;
+
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
 
 //
 
@@ -89,6 +98,7 @@ public class ScanditSDKDemoSimple extends Activity implements ScanditSDKOnScanLi
         super.onCreate(savedInstanceState);
 
         // Initialize and start the bar code recognition.
+
         initializeAndStartBarcodeScanning();
     }
 
@@ -112,6 +122,7 @@ public class ScanditSDKDemoSimple extends Activity implements ScanditSDKOnScanLi
      * Initializes and starts the bar code scanning.
      */
     public void initializeAndStartBarcodeScanning() {
+
         // Switch to full screen.
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -129,7 +140,10 @@ public class ScanditSDKDemoSimple extends Activity implements ScanditSDKOnScanLi
         //*END_OLD*
 
         // Add both views to activity, with the scan GUI on top.
-        setContentView(picker);
+        setContentView(R.layout.scanner);
+        FrameLayout fl = (FrameLayout) findViewById(R.id.picker_container);
+        fl.addView(picker);
+
         mBarcodePicker = picker;
 
         // Register listener, in order to be notified about relevant events
@@ -300,3 +314,4 @@ public class ScanditSDKDemoSimple extends Activity implements ScanditSDKOnScanLi
 
 
 }
+
