@@ -4,6 +4,22 @@
 package com.example.andrewmc.cart_0;
 
 import android.app.Activity;
+
+//NEW
+import android.annotation.TargetApi;
+import android.os.Build;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import com.mirasense.scanditsdk.ScanditSDKScanSettings;
+//import com.mirasense.scanditsdk.interfaces.ScanditSDKOnScanListener;
+//import com.mirasense.scanditsdk.interfaces.ScanditSDKScanSession;
+
+//
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,7 +36,8 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import android.app.ProgressDialog;
-import android.view.View;
+import android.view.*;
+import android.view.ViewGroup.LayoutParams;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -28,6 +45,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 
 import com.mirasense.scanditsdk.ScanditSDKAutoAdjustingBarcodePicker;
+import com.mirasense.scanditsdk.ScanditSDKBarcodePicker;
 import com.mirasense.scanditsdk.interfaces.*;
 
 import org.json.JSONArray;
@@ -41,6 +59,7 @@ public class ScanditSDKDemoSimple extends Activity implements ScanditSDKOnScanLi
 
     // The main object for recognizing a displaying barcodes.
     private ScanditSDK mBarcodePicker;
+
     public String start_et;
 
 
@@ -103,8 +122,11 @@ public class ScanditSDKDemoSimple extends Activity implements ScanditSDKOnScanLi
         // should only be instantiated if the picker is shown full screen as the
         // legacy picker will rotate the orientation and not properly work in
         // non-fullscreen.
+
+        //*OLD*
         ScanditSDKAutoAdjustingBarcodePicker picker = new ScanditSDKAutoAdjustingBarcodePicker(
                 this, sScanditSdkAppKey, ScanditSDKAutoAdjustingBarcodePicker.CAMERA_FACING_BACK);
+        //*END_OLD*
 
         // Add both views to activity, with the scan GUI on top.
         setContentView(picker);
